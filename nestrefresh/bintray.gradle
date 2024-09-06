@@ -1,14 +1,14 @@
 apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'maven'
+//apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "file:///Users/todou/.m2/repository")
-        }
-    }
-}
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: "file:///Users/todou/.m2/repository")
+//        }
+//    }
+//}
 
 version = "0.0.8"
 group = "com.github.todou"
@@ -60,20 +60,20 @@ artifacts {
     archives sourcesJar
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-    publications = ['Production']
-    override = true
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        name = archivesBaseName
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = [license]
-        publish = true
-    }
-}
+//Properties properties = new Properties()
+//properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//bintray {
+//    user = properties.getProperty("bintray.user")
+//    key = properties.getProperty("bintray.apikey")
+//    publications = ['Production']
+//    override = true
+//    configurations = ['archives']
+//    pkg {
+//        repo = "maven"
+//        name = archivesBaseName
+//        websiteUrl = siteUrl
+//        vcsUrl = gitUrl
+//        licenses = [license]
+//        publish = true
+//    }
+//}

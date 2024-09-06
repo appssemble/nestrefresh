@@ -2,19 +2,29 @@
 
 buildscript {
     apply from: 'versions.gradle'
-    addRepos(repositories)
+
     dependencies {
         classpath deps.android_gradle_plugin
         classpath deps.kotlin.plugin
     }
+
+    repositories {
+        maven { url "https://repo.grails.org/grails/core/" }
+        google()
+        mavenCentral()
+    }
 }
 
 plugins {
-    id "com.jfrog.bintray" version "1.8.4"
+    //id "com.jfrog.bintray" version "1.8.4"
 }
 
 allprojects {
-    addRepos(repositories)
+    repositories {
+        maven { url "https://repo.grails.org/grails/core/" }
+        google()
+        mavenCentral()
+    }
 }
 
 task clean(type: Delete) {
